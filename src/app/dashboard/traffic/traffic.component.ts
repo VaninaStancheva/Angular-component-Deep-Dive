@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DashboardItemComponent } from '../../shared/dashboard-item/dashboard-item.component';
+import { DashboardItemComponent } from '../dashboard-item/dashboard-item.component';
 
 @Component({
   selector: 'app-traffic',
