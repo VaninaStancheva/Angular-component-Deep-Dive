@@ -8,6 +8,4 @@ import {Component, input} from '@angular/core';
   styleUrl: './button.component.css'
 })
 export class ButtonComponent {
-titleButton = input<string>();
-iconButton = input<string>();
 }
