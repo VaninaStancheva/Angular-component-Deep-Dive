@@ -15,16 +15,18 @@ import {FormsModule} from "@angular/forms";
   styleUrl: './new-ticket.component.css'
 })
 export class NewTicketComponent {
-
-  @ViewChild('form') private form?: ElementRef<HTMLFormElement>;
+  enteredTitle = '';
+  enteredText = '';
   add = output<{title:string, text:string}>();
 
-  ngOnInit() {
-    console.log(this.form?.nativeElement);
-  }
+  // ngOnInit() {
+  //   console.log(this.form?.nativeElement);
+  // }
 
-  onSubmit(title:string, ticketText:string) {
-    this.add.emit({title: title, text: ticketText});
-    this.form?.nativeElement.reset();
+  onSubmit() {
+    this.add.emit({title: this.enteredTitle, text: this.enteredText});
+    //this.form?.nativeElement.reset();
+    this.enteredTitle = '';
+    this.enteredText = '';
   }
 }
