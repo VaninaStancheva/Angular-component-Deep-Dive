@@ -2,7 +2,17 @@
   [image]="{src: 'list.png', alt: 'A list of items'}"
   title="Support Tickets"
 >
+<div>
+  <ul>
+    @for (ticket of tickets; track ticket.id) {
+      <app-ticket [data]="ticket" />
+    } @empty {
+      <p>'No tickets available!'</p>
+    }
+  </ul>
+</div>
+
   <div id="new-ticket">
-    <app-new-ticket />
+    <app-new-ticket (add)="onAdd($event)" />
   </div>
 </app-dashboard-item>
